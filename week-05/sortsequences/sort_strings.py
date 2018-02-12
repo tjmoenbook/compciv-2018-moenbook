@@ -4,8 +4,8 @@ def reverse_alpha():
     return sorted(STRING_LIST, reverse=True)
 
 def alpha_case_insensitive():
-    def insensitive(str):
-        return str.upper()
+    def insensitive(s):
+        return s.upper()
     return sorted(STRING_LIST, key=insensitive)
 
 def by_longest_length():
@@ -13,8 +13,8 @@ def by_longest_length():
     Sort in descending order of length of strings
     """
     # fill it out
-    def getLength(str):
-        return len(str)
+    def getLength(s):
+        return len(s)
     return sorted(STRING_LIST, key=getLength, reverse=True)
 
 
@@ -28,6 +28,12 @@ def filter_and_sort_number_strings():
     https://www.geeksforgeeks.org/python-string-isnumeric-application/
     """
     # fill it out
+    tempList = STRING_LIST
+    for s in STRING_LIST:
+        if (s.isnumeric()) == False:
+            tempList.append(s)
+    return sorted(tempList)
+
 
 
 def filter_and_sort_number_strings_as_numbers():
@@ -36,5 +42,11 @@ def filter_and_sort_number_strings_as_numbers():
     and then sort that list of strings in *numerical* order
     """
     # fill it out
+    tempList = STRING_LIST
+    for s in STRING_LIST:
+        if (s.isnumeric()) == True:
+            tempList.append(int(s))
+    return sorted(tempList)
+
 
 
