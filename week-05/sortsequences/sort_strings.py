@@ -1,30 +1,21 @@
 from datastubs import STRING_LIST
 
-
 def reverse_alpha():
-    """
-    return the list of strings sorted in
-    reverse alphabetical order.
-    """
-
     return sorted(STRING_LIST, reverse=True)
 
-
 def alpha_case_insensitive():
-    """
-    return the list of strings sorted in
-    alphabetical order, but without regard to
-    capitalization
-    """
-    # fill it out
-
-
+    def insensitive(str):
+        return str.upper()
+    return sorted(STRING_LIST, key=insensitive)
 
 def by_longest_length():
     """
     Sort in descending order of length of strings
     """
     # fill it out
+    def getLength(str):
+        return len(str)
+    return sorted(STRING_LIST, key=getLength, reverse=True)
 
 
 def filter_and_sort_number_strings():

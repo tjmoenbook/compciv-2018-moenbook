@@ -17,7 +17,7 @@ def oldest():
 
 
 def name_reverse_alpha():
-    def getName(n)
+    def getName(n):
         return n['name']
     return sorted(PEOPLE_LIST, key=getName, reverse=True)
 
