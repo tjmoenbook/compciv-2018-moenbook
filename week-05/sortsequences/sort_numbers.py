@@ -12,14 +12,14 @@ def numerical_order():
     """
     Sort the list of numbers in numerical order
     """
-    # fill it out
+    return sorted(NUMBER_LIST)
 
 def as_absolute_value():
     """
     The absolute value of a number `n` is its value
     regardless of positive or negative sign
     """
-    # fill it out
+    sorted(NUMBER_LIST, key=abs)
 
 
 def as_inverse_number():
@@ -27,5 +27,4 @@ def as_inverse_number():
     An inverse of a number `n` is defined as: `1/n`
     The bigger the number, the smaller its inverse, and vice versa
     """
-    # fill it out
-
+    sorted(NUMBER_LIST, key=lambda x: 1/x)

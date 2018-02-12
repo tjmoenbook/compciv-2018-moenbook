@@ -1,29 +1,27 @@
 from datastubs import PEOPLE_LIST
 
 def longest_name():
-    """
-    sort by length of name in descending order
-    """
-    def foolen(p): # nothing wrong with having a function inside a function
-        return len(p['name'])
-    return sorted(PEOPLE_LIST, key=foolen, reverse=True)
+    def getNameLength(nl): 
+        return len(nl['name'])
+    return sorted(PEOPLE_LIST, key=getNameLength, reverse=True)
 
 def youngest():
-    """
-    sort by age in ascending order
-    """
-    # fill it out
+    def getAge(a): 
+        return a['age']
+    return sorted(PEOPLE_LIST, key=getAge)
 
 def oldest():
-    """
-    sort by age in descending order
-    """
-    # fill it out
+    def getAge(a): 
+        return a['age']
+    return sorted(PEOPLE_LIST, key=getAge, reverse=True)
 
 
 def name_reverse_alpha():
-    # fill it out
-
+    def getName(n)
+        return n['name']
+    return sorted(PEOPLE_LIST, key=getName, reverse=True)
 
 def country_then_age():
-    # fill it out
+    def getCountryAge(m):
+        return (m['country'],m['age'])
+    return sorted(PEOPLE_LIST, key=getCountryAge)
