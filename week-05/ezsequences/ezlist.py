@@ -28,14 +28,14 @@ def foo_a():
     """
     Return the very first member of `ez_list`
     """
-    return ezlist[0]
+    return ez_list[0]
 
 def foo_b():
     """
     Return the sum of the 2nd and 4th members of
       `ezlist`
     """
-    return ezlist[1]+ezlist[3]
+    return ez_list[1]+ez_list[3]
 
 
 
@@ -45,14 +45,14 @@ def foo_c():
 
     Use a negative index to specify this member
     """
-    return ezlist[len(ezlist)-1]
+    return ez_list[-1]
 
 def foo_cx():
     """
     Return the type of the object that is the
         second-to-last member of `ez_list`
     """
-    return type(ezlist.get(len(ezlist)-2))
+    return type(ez_list[-2])
 
 
 def foo_d():
@@ -60,8 +60,7 @@ def foo_d():
     Return the very last member of the sequence that itself
         is the second-to-last member of `ez_list`
     """
-    member = ezlist.get(len(ezlist)-2)
-    return member[1]
+    return ez_list[-2][-1]
 
 
 def foo_e():
@@ -69,7 +68,8 @@ def foo_e():
     Calculate and return the length of `ez_list`,  i.e., the
       number of members it contains.
     """
-    
+    len(ez_list)
+
 
 
 def foo_f():
@@ -80,7 +80,7 @@ def foo_f():
       i.e. the separate values are joined with the
         semi-colon character
     """
-
+    return ';'.join(ez_list[5])
 
 def foo_g():
     """
@@ -89,6 +89,7 @@ def foo_g():
 
       (it should have 4 members total)
     """
+    ez_list[1:5]
 
 
 def foo_h():
@@ -96,4 +97,5 @@ def foo_h():
     Return a list that consists of the last
       3 members of `ez_list` in *reverse* order
     """
-
+    xlist = ez_list[-3:]
+    return list(reversed(xlist))

@@ -32,21 +32,21 @@ def foo_a():
     Return the value that corresponds to the `'spouse'`
       property/key of ez_dict
     """
-    return ez_dict.get('spouse')
+    return ez_dict['spouse']
 
 
 def foo_b():
     """
     Return the "first name" value
     """
-    return ez_dict.get('names').get('first')
+    return ez_dict['names']['first']
 
 def foo_bx():
     """
     Return the type of the object that
       the `'terms'` attribute points
     """
-    return type(ez_dict.get('terms'))
+    return type(ez_dict['terms'])
 
 
 def foo_c():
@@ -55,7 +55,8 @@ def foo_c():
         last and first name together, separated by a comma and
         space, e.g. 'Obama, Barack'
     """
-
+    n = ez_dict['name']
+    return '{y}, {x}'.format(y=n['last'],x=n['first'])
 
 
 def foo_d():
@@ -65,18 +66,21 @@ def foo_d():
       but `'first'` and `'last'` are not
 
     """
+    return len(ez_dict.keys())
 
 def foo_e():
     """
     Return the number of children (based on number of names in
      the `'children'` property)
     """
+    return len(ez_dict['children'])
 
 
 def foo_f():
     """
     Return the name of the last child listed in `'children'`
     """
+    return ez_dict['children'][-1]
 
 def foo_g():
     """
@@ -89,11 +93,14 @@ def foo_g():
       adding two separate lists. Do not use the `append()`
       method.
     """
+    xlist = [ez_dict['spouse']] + ez_dict['children']
+    return ','.join(xlist)
 
 def foo_h():
     """
     Print the start date of President Trump's initial term
     """
+    return ez_dict['terms'][0]['start_date']
 
 
 def foo_i():
@@ -125,7 +132,7 @@ def foo_j():
 
       http://docquery.fec.gov/cgi-bin/fecimg/?P80003338
     """
-
+    return baseurl.format(id=fecid)
 
 
 
