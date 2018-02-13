@@ -21,11 +21,6 @@ def filter_and_sort_number_strings():
     return sorted(tempList)
 
 def filter_and_sort_number_strings_as_numbers():
-    """
-    Filter the list for strings that contain numbers
-    and then sort that list of strings in *numerical* order
-    """
-    # fill it out
     tempList = []
     for s in STRING_LIST:
         if (s.isnumeric()) == True:
