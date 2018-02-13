@@ -32,20 +32,21 @@ def foo_a():
     Return the value that corresponds to the `'spouse'`
       property/key of ez_dict
     """
-
+    return ez_dict.get('spouse')
 
 
 def foo_b():
     """
     Return the "first name" value
     """
-
+    return ez_dict.get('names').get('first')
 
 def foo_bx():
     """
     Return the type of the object that
       the `'terms'` attribute points
     """
+    return type(ez_dict.get('terms'))
 
 
 def foo_c():
@@ -54,6 +55,7 @@ def foo_c():
         last and first name together, separated by a comma and
         space, e.g. 'Obama, Barack'
     """
+
 
 
 def foo_d():
@@ -104,6 +106,13 @@ def foo_i():
     Hint: You should be using the third-party `dateutil`
       library for this.
     """
+    import dateutil.parser
+    from dateutil.relativedelta import relativedelta
+    term = ez_dict['terms'][0]
+    ty = dateutil.parser.parse(term['end_date'])
+    tx = dateutil.parser.parse(ez_dict['birthdate'])
+    diff = relativedelta(ty, tx)
+    return diff.years
 
 
 def foo_j():
