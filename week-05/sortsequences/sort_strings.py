@@ -28,12 +28,12 @@ def filter_and_sort_number_strings():
     https://www.geeksforgeeks.org/python-string-isnumeric-application/
     """
     # fill it out
-    tempList = STRING_LIST
+    #tempList = STRING_LIST
+    tempList = []
     for s in STRING_LIST:
         if (s.isnumeric()) == False:
             tempList.append(s)
-    return sorted(tempList)
-
+    return sorted(STRING_LIST)
 
 
 def filter_and_sort_number_strings_as_numbers():
@@ -42,7 +42,8 @@ def filter_and_sort_number_strings_as_numbers():
     and then sort that list of strings in *numerical* order
     """
     # fill it out
-    tempList = STRING_LIST
+   # tempList = STRING_LIST
+    tempList = []
     for s in STRING_LIST:
         if (s.isnumeric()) == True:
             tempList.append(int(s))
