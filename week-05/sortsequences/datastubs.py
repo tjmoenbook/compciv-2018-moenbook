@@ -22,9 +22,3 @@ PEOPLE_LIST = [
     {'name': 'Pat', 'age': 24, 'country': 'Canada'},
     {'name': 'Gretchen', 'age': 31, 'country': 'France'},
 ]
-
-
-
-
-
-

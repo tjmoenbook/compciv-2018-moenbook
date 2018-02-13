@@ -30,19 +30,16 @@ import sort_strings as foo
 def test_reverse_alpha():
 	assert foo.reverse_alpha() == ['danny', 'Zero', 'Dax', '199', '12', '100000']
 
-
 def test_alpha_case_insensitive():
 	assert foo.alpha_case_insensitive() == ['100000', '12', '199', 'danny', 'Dax', 'Zero']
 
-
 def test_by_longest_length():
-	assert foo.by_longest_length() == ['100000', 'danny', 'Zero', '199', 'Dax', '12']
-
+    thelist = foo.by_longest_length()
+    assert thelist == ['100000', 'danny', 'Zero', 'Dax', '199', '12'] or \
+           thelist == ['100000', 'danny', 'Zero', '199', 'Dax', '12']
 
 def test_filter_and_sort_number_strings():
 	assert foo.filter_and_sort_number_strings() == ['100000', '12', '199']
 
-
 def test_filter_and_sort_number_strings_as_numbers():
     assert foo.filter_and_sort_number_strings_as_numbers() == ['12', '199', '100000']
-
