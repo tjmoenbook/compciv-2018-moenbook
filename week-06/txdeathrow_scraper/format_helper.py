@@ -18,10 +18,15 @@ def txdate_to_iso(datestr):
     Returns:
         <str>: in 'YYYY-MM-DD' format, e.g. '1988-10-24'
     """
-    d = datestr[3:5]
-    m = datestr[0:2]
-    y = datestr[-4:]
+    if len(datestr) == 10:
+        d = datestr[3:5]
+        m = datestr[0:2]
+        y = datestr[-4:]
+    else:
+        m,d,y = datestr.split('/')
+        y = '19' + y
     return '-'.join([y,m,d])
+
 
 def calc_years_diff(start_date, end_date):
     """
@@ -49,7 +54,13 @@ def calc_years_diff(start_date, end_date):
           will be enough precision. And leap years shouldn't make THAT much
           of a difference...
     """
-
+    dend = datetime.strptime(end_date, '%Y-%m-%d')
+    dstart = datetime.strptime(start_date, '%Y-%m-%d')
+    delta = dend - dstart
+    days_str = str(delta).split(' ')
+    days_float = float(days_str[0])
+    years_float = days_float/365
+    return years_float
 
 def make_absolute_url(href):
     """
@@ -116,4 +127,4 @@ def make_absolute_url(href):
     """
     #### fill in yourself
     #### could be a one-liner with proper use of the urljoin() function...
-
+    return urljoin(data_helper.DATA_SRC_URL,href)

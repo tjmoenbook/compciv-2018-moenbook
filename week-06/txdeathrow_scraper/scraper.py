@@ -46,6 +46,10 @@ def get_and_parse_inmate_rows():
     ### Fill in yourself, should be exactly the same
     ### as from the function found in checker.py
     ### of txdeathrow_check exercise
+    txt = data_helper.get_html()
+    soup = BeautifulSoup(txt,'lxml')
+    rows = soup.select('tr')
+    return rows[1:]
 
 
 def wrangle_inmate_data_from_tag(rowtag):
