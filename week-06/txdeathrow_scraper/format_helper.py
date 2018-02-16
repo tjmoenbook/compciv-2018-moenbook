@@ -18,15 +18,18 @@ def txdate_to_iso(datestr):
     Returns:
         <str>: in 'YYYY-MM-DD' format, e.g. '1988-10-24'
     """
+    datestr2 = datestr.strip()
     if len(datestr) == 10:
         d = datestr[3:5]
         m = datestr[0:2]
         y = datestr[-4:]
     else:
-        m,d,y = datestr.split('/')
-        y = '19' + y
+        m,d,y = datestr2.split('/')
+        if len(y) == 2:
+            y = '19' + y
+        else:
+            y = y
     return '-'.join([y,m,d])
-
 
 def calc_years_diff(start_date, end_date):
     """

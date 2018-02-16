@@ -110,3 +110,18 @@ def wrangle_inmate_data_from_tag(rowtag):
     """
     ### fill in yourself
     ### (this one will be pretty long, though it's mostly tedious/repetitive steps)
+
+    d = {}
+    tdtags = rowtag.select('td')
+    d['tdcj_id'] = tdtags[0].text
+    d['url'] = make_absolute_url(tdtags[1].select('a')[0].attrs['href'])
+    d['last_name'] = tdtags[2].text
+    d['first_name'] = tdtags[3].text
+    d['birthdate'] = txdate_to_iso(tdtags[4].text)
+    d['gender'] = tdtags[5].text
+    d['race'] = tdtags[6].text
+    d['date_received'] = txdate_to_iso(tdtags[7].text)
+    d['date_offense'] = txdate_to_iso(tdtags[9].text)
+    d['age_at_offense'] = int(calc_years_diff(txdate_to_iso(tdtags[4].text),txdate_to_iso(tdtags[9].text)))
+    d['years_before_death_row'] = calc_years_diff(txdate_to_iso(tdtags[9].text),txdate_to_iso(tdtags[7].text))
+    return d
