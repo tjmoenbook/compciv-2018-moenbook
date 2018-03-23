@@ -13,8 +13,7 @@ page_soup = soup(page_html, "html.parser")
 
 # grabs Part 4b Transactions
 transactions = page_soup.find("div",{"class":"row"})   
-transaction = transactions.div.findAll("section","class":"card mb-2"})
-
+transaction = transactions.div.findAll("section",{"class":"card mb-2"})
 
 
 filename = "products.csv"
